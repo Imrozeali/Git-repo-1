@@ -14,10 +14,10 @@ on:
 
 env:
  # Credentials for deployment to AWS
- AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
- AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+ AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID1 }}
+ AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY1 }}
  # S3 for terraform state
- BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}}
+ BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE1}}
  AWS_REGION: us-east-2
  EKS_CLUSTER: vprofile-eks
  
@@ -41,7 +41,7 @@ env:
 
        - name: Terraform init 
          id: init
-         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
+         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE1"
 
        - name: Terraform format
          id: fmt
